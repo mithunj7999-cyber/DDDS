@@ -19,12 +19,11 @@
             </div>
             
             <div class="header-center">
-                <h1>DDDS</h1>
-                <p>Driver Drowsiness Detection System</p>
+                <h1 class="aesthetic-title">Driver Drowsiness Detection System</h1>
             </div>
 
             <div class="header-actions">
-                <button class="monitor-btn" id="camera-btn" onclick="toggleCamera()">START MONITORING</button>
+                <button class="monitor-btn large-btn" id="camera-btn" onclick="toggleCamera()">INITIALIZE MONITORING SYSTEM</button>
             </div>
         </header>
 
@@ -35,25 +34,22 @@
                 <div class="panel-section">
                     <h2 class="section-title">DRIVER PROFILE</h2>
                     
+                <div class="panel-section session-summary">
+                    <h2 class="section-title">ACTIVE SESSION PROFILE</h2>
+                    
                     <div class="profile-display">
-                        <div class="p-item"><label>Name:</label> <span id="disp-name">---</span></div>
-                        <div class="p-item"><label>Phone:</label> <span id="disp-phone">---</span></div>
-                        <div class="p-item"><label>Vehicle:</label> <span id="disp-vehicle">---</span></div>
-                        <div class="p-item"><label>Age:</label> <span id="disp-age">---</span></div>
-                        <div class="p-item"><label>License:</label> <span id="disp-license">---</span></div>
+                        <div class="p-item"><label>Driver</label> <span id="disp-name">Waiting...</span></div>
+                        <div class="p-item"><label>Phone</label> <span id="disp-phone">---</span></div>
+                        <div class="p-item"><label>Plate</label> <span id="disp-vehicle">---</span></div>
+                        <div class="p-item"><label>Age</label> <span id="disp-age">---</span></div>
+                        <div class="p-item"><label>Licence</label> <span id="disp-license">---</span></div>
                     </div>
                 </div>
-
-                <div class="panel-section log-section">
-                    <h2 class="section-title">INCIDENT LOGS</h2>
-                    <ul class="log-list" id="incident-logs">
-                        <li class="log-item initialized">System initialized...</li>
-                    </ul>
                 </div>
 
-                <!-- NEW: EMERGENCY CONTACT PANEL -->
+                <!-- EMERGENCY CONTACT PANEL (MOVED ABOVE LOGS) -->
                 <div class="panel-section emergency-panel">
-                    <h2 class="section-title" style="color: #ff3366;">EMERGENCY CONTACT</h2>
+                    <h2 class="section-title" style="color: #ff3366;">EMERGENCY ALERTS</h2>
                     <div class="contact-info">
                         <p class="contact-name" id="contact-name-display">Sara Connor</p>
                         <p class="contact-phone" id="contact-phone-display">+1 (555) 012-3456</p>
@@ -70,6 +66,13 @@
                         <input type="text" id="edit-contact-phone" placeholder="Phone">
                         <button class="action-btn mini" onclick="saveContact()">Save</button>
                     </div>
+                </div>
+
+                <div class="panel-section log-section">
+                    <h2 class="section-title">INCIDENT LOGS</h2>
+                    <ul class="log-list" id="incident-logs">
+                        <li class="log-item initialized">System initialized...</li>
+                    </ul>
                 </div>
             </aside>
 
@@ -156,8 +159,8 @@
         <div class="login-card">
             <div class="login-header">
                 <div class="login-logo">D</div>
-                <h1>DDDS Login</h1>
-                <p>Driver Detection System</p>
+                <h1 class="aesthetic-title login-title">DDDS LOGIN</h1>
+                <p class="aesthetic-sub">Driver Drowsiness Detection System</p>
             </div>
             
             <form id="login-form">
@@ -187,8 +190,13 @@
                     <label>License Number (Optional)</label>
                     <input type="text" id="login-license" placeholder="LIC-XXXXXXXX">
                 </div>
+
+                <div class="form-group">
+                    <label>Security Password *</label>
+                    <input type="password" id="login-pass" required placeholder="••••••••">
+                </div>
                 
-                <button type="submit" class="login-btn">ENTER DASHBOARD</button>
+                <button type="submit" class="login-btn">ACTIVATE SAFETY PROTOCOL</button>
             </form>
         </div>
     </div>

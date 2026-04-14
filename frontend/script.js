@@ -17,7 +17,9 @@ function setupLogin() {
             phone: document.getElementById('login-phone').value,
             vehicle: document.getElementById('login-vehicle').value,
             age: document.getElementById('login-age').value,
-            license: document.getElementById('login-license').value || "N/A"
+            license: document.getElementById('login-license').value || "N/A",
+            loginTime: new Date().toLocaleTimeString(),
+            authStatus: "VERIFIED"
         };
         
         currentUser = details.name;
@@ -37,6 +39,9 @@ function updateProfileDisplay(data) {
     document.getElementById('disp-vehicle').innerText = data.vehicle;
     document.getElementById('disp-age').innerText = data.age;
     document.getElementById('disp-license').innerText = data.license;
+
+    // Add session summary to logs
+    addLogItem(`Security check: ACCESS GRANTED at ${data.loginTime}.`, "success");
 }
 
 function addLogItem(message, type = 'normal') {
